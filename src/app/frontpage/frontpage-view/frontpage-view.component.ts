@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'app-frontpage-view',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrontpageViewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public fireAuth: AngularFireAuth
+  ) {}
 
   ngOnInit(): void {
+  }
+
+  login() {
+    this.fireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+  logout() {
+    this.fireAuth.signOut();
   }
 
 }

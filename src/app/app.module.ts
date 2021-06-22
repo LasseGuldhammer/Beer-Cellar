@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { FrontpageModule } from './frontpage/frontpage.module';
 import { HeaderModule } from './header/header.module';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { HeaderModule } from './header/header.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     FrontpageModule,
     HeaderModule
   ],
