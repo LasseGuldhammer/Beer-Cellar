@@ -8,6 +8,8 @@ import { FrontpageModule } from './frontpage/frontpage.module';
 import { HeaderModule } from './header/header.module';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { LoginModule } from './login/login.module';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { environment } from 'src/environments/environment';
     MatSliderModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FrontpageModule,
-    HeaderModule
+    HeaderModule,
+    LoginModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
