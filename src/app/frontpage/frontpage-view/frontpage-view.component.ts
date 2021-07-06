@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import firebase from 'firebase/app';
 
 @Component({
@@ -10,7 +11,8 @@ import firebase from 'firebase/app';
 export class FrontpageViewComponent implements OnInit {
 
   constructor(
-    public fireAuth: AngularFireAuth
+    public fireAuth: AngularFireAuth,
+    private _router: Router
   ) {}
 
   ngOnInit(): void {
@@ -21,6 +23,7 @@ export class FrontpageViewComponent implements OnInit {
   }
   logout() {
     this.fireAuth.signOut();
+    this._router.navigate(['/login'])
   }
 
 }

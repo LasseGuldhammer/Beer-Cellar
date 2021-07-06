@@ -37,4 +37,12 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  signInWithGoogle(): void {
+    this._firebaseService.signInWithGoogle()
+  }
+
+  signInWithFacebook() {
+    this._firebaseService.signInWithFacebook()
+  }
+
 }

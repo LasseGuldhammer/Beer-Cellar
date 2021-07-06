@@ -9,7 +9,11 @@
 			<input matInput type="password" #password>
 		</mat-form-field>
 		<button mat-raised-button (click)="signInWithEmailAndPassword()">Login</button>
+		<span>{{ errorCode }}</span>
+		<span>{{ errorMessage }}</span>
 	</form>
-	<span>{{ errorCode }}</span>
-	<span>{{ errorMessage }}</span>
+	<section>
+		<button (click)="signInWithGoogle()">Sign In With Google</button>
+		<button (click)="signInWithFacebook()">With In With Facebook</button>
+	</section>
 </main>

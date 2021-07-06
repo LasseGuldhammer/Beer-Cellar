@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore'
 import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -27,5 +28,13 @@ export class FirebaseService {
 
   signInWithEmailAndPassWord(email: string, password: string) {
     return this._fireAuth.signInWithEmailAndPassword(email, password)
+  }
+
+  signInWithGoogle() {
+    return this._fireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider)
+  }
+
+  signInWithFacebook() {
+    return this._fireAuth.signInWithPopup(new firebase.auth.FacebookAuthProvider)
   }
 }

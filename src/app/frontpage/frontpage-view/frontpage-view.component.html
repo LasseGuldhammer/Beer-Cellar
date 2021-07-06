@@ -1,7 +1,4 @@
-<div *ngIf="fireAuth.user | async as user; else showLogin">
-	<button (click)="logout()">Logout</button>
-  </div>
-  <ng-template #showLogin>
-	<p>Please login.</p>
-	<button (click)="login()">Login with Google</button>
-  </ng-template>
+<div *ngIf="fireAuth.user | async as user">
+	Login succesful.
+</div>
+<button (click)="logout()">Logout</button>
